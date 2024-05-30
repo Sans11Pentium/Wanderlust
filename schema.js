@@ -14,3 +14,10 @@ module.exports.listingSchema = Joi.object({
 //required() -> shouldnt be empty
 // .min(0) -> that min value of price can be 0, cant be negative
 //.allow(...,...) -> pool of values it is allowed to take ie, empty str/ null 
+
+module.exports.reviewSchema = Joi.object({
+    review: Joi.object({
+        rating: Joi.number().required().min(1).max(5),
+        comment: Joi.string().required(),
+    }).required()
+});
