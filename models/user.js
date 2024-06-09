@@ -11,6 +11,6 @@ const userSchema = new Schema({
     // username and password will automatically be added by passport local mongoose
 });
 
-User.plugin(passportLocalMongoose); //this implements addn of username,pswd,salting,hashing
+userSchema.plugin(passportLocalMongoose); //this implements addn of username,pswd,salting,hashing
 
 module.exports = mongoose.model('User',userSchema);
